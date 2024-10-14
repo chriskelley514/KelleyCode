@@ -1,0 +1,122 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Flexbox layout */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    background-color: teal;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+footer {
+    background-color: #506680;
+    color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+
+.column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Individual box colors */
+.prayer {
+    background-color: #00bfff;
+}
+
+.curse {
+    background-color: #f5deb3;
+}
+
+.waves {
+    background-color: #d2691e;
+}
+
+/* Mobile layout: Blue is biggest, tan is medium, orange is smallest */
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .prayer {
+        order: 1;
+        flex-grow: 3;
+    }
+
+    .curse {
+        order: 2;
+        flex-grow: 2;
+    }
+
+    .waves {
+        order: 3;
+        flex-grow: 1;
+    }
+
+    .column {
+        height: auto;
+    }
+}
+
+/* Desktop layout: Blue in the middle, text centered at the top */
+@media(min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .prayer {
+        order: 2;
+        width: 60%;
+    }
+
+    .curse {
+        order: 1;
+        width: 20%;
+    }
+
+    .waves {
+        order: 3;
+        width: 20%;
+    }
+
+    .column {
+        align-items: flex-start;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .column p {
+        margin-top: 0;
+    }
+}

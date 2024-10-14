@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laying Out Book Pages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        figure {
+            margin: 20px 0;
+        }
+        .image-container {
+            border-top: 1px solid #000;
+            padding-top: 10px;
+        }
+        .caption-container {
+            border-top: 1px solid #000;
+            padding-top: 5px;
+            margin-top: 5px;
+        }
+        figcaption {
+            font-size: 0.9em;
+            display: inline;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .italic {
+            font-style: italic;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        .image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        p {
+            text-align: justify;
+        }
+        .note {
+            margin-top: 10px;
+        }
+        .code-background {
+            background-color: #f0f0f0;
+            padding: 5px;
+            display: inline-block;
+            border: 1px solid #ccc;
+        }
+        .center-caption {
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>3.2.1 <span class="bold">Input Type Color</span></h1>
+    <p>
+        The <span class="bold">color input type</span> (Fig. 3.1, lines 20–21) enables the user to enter a color. At the time of this writing, most browsers render the color input type as a text field in which the user can enter a hexadecimal code or a color name. In the future, when you click a <span class="italic">color picker</span>, browsers will likely display a color picker similar to the Microsoft Windows color dialog shown in Fig. 3.2.
+    </p>
+    <figure>
+        <div class="image-container">
+            <img src="OperaColorInput.png" alt="A dialog for choosing colors." class="image">
+        </div>
+        <div class="caption-container">
+            <figcaption><span class="bold">Fig. 3.2</span> | A dialog for choosing colors.</figcaption>
+        </div>
+    </figure>
+
+    <h2><span class="bold">autofocus</span> <span class="italic">Attribute</span></h2>
+    <p>
+        The <span class="bold">autofocus attribute</span> (Fig. 3.1, line 20)—an optional attribute that can be used in only one input element on a form—automatically gives the focus to the input element, allowing the user to begin typing in that element immediately. Fig. 3.3 shows autofocus on the color element—the first input element in our form—as rendered in Chrome. You do not need to include autofocus in your forms.
+    </p>
+    <figure>
+        <div class="image-container">
+            <img src="Autofocus.png" alt="Autofocus in the color input element using Chrome." class="image">
+        </div>
+        <div class="caption-container">
+            <figcaption><span class="bold">Fig. 3.3</span> | Autofocus in the color input element using Chrome.</figcaption>
+        </div>
+    </figure>
+
+    <h2><span class="bold italic">Validation</span></h2>
+    <p>
+        Traditionally, it’s been difficult to validate user input, such as ensuring that an e-mail address, URL, date, or time is entered in the proper format. The new HTML5 input types are <span class="italic">self-validating</span> on the client side, eliminating the need to add complicated JavaScript code to your web pages to validate user input, reducing the amount of invalid data submitted and consequently reducing Internet traffic between the server and the client to correct invalid input. <span class="italic">The server should still validate all user input.</span>
+    </p>
+    <p>
+        When a user enters data into a form then submits the form (in this example, by clicking the <span class="bold">Submit</span> button), the browser immediately checks the self-validating elements to ensure that the data is correct. For example, if a user enters an incorrect hexadecimal color value when using a browser that renders the color elements as a text field (e.g., Chrome), a callout pointing to the element will appear, indicating that an invalid value was entered Fig. 3.4. Fig. 3.5 lists each of the new HTML5 input types and provides examples of the proper formats required for each type of data to be valid.
+    </p>
+    <figure>
+        <div class="image-container">
+            <img src="SelfValidationChrome.png" alt="Validating a color input in Chrome." class="image">
+        </div>
+        <div class="caption-container">
+            <figcaption><span class="bold">Fig. 3.4</span> | Validating a color input in Chrome.</figcaption>
+        </div>
+    </figure>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Input Type</th>
+                <th>Format</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>color</td>
+                <td>Hexadecimal code</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>yyyy-mm-dd</td>
+            </tr>
+            <tr>
+                <td>datetime</td>
+                <td>yyyy-mm-dd</td>
+            </tr>
+            <tr>
+                <td>datetime-local</td>
+                <td>yyyy-mm-ddThh:mm</td>
+            </tr>
+            <tr>
+                <td>month</td>
+                <td>yyyy-mm</td>
+            </tr>
+            <tr>
+                <td>number</td>
+                <td>Any numerical value</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>name@domain.com</td>
+            </tr>
+            <tr>
+                <td>url</td>
+                <td>http://www.domainname.com</td>
+            </tr>
+            <tr>
+                <td>time</td>
+                <td>hh:mm</td>
+            </tr>
+            <tr>
+                <td>week</td>
+                <td>yyyy-Wnn</td>
+            </tr>
+        </tbody>
+    </table>
+    <figcaption class="center-caption">
+        <span class="bold">Fig. 3.5</span> | Self-validating input types.
+    </figcaption>
+
+    <p class="note">
+        If you want to bypass validation, you can add the <span class="bold">formnovalidate</span> attribute to input type submit in line 101:
+    </p>
+    <pre class="code-background"><code>&lt;input type="submit" value="Submit" formnovalidate /&gt;</code></pre>
+
+</body>
+</html>

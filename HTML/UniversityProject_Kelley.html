@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Visit Feedback</title>
+</head>
+<body>
+    <h1>Campus Visit Feedback Form</h1>
+
+    <form action="#" method="post">
+        <!-- Text fields for Name and Email -->
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <!-- Checkboxes for campus attributes -->
+        <h3>What did you like most about the campus? (Check all that apply)</h3>
+        <input type="checkbox" id="campus" name="liked[]" value="campus">
+        <label for="campus">Campus</label><br>
+
+        <input type="checkbox" id="students" name="liked[]" value="students">
+        <label for="students">Students</label><br>
+
+        <input type="checkbox" id="location" name="liked[]" value="location">
+        <label for="location">Location</label><br>
+
+        <input type="checkbox" id="atmosphere" name="liked[]" value="atmosphere">
+        <label for="atmosphere">Atmosphere</label><br>
+
+        <input type="checkbox" id="dorm" name="liked[]" value="dorm">
+        <label for="dorm">Dorm Rooms</label><br>
+
+        <input type="checkbox" id="sports" name="liked[]" value="sports">
+        <label for="sports">Sports</label><br><br>
+
+        <!-- Radio buttons for how they became interested -->
+        <h3>How did you become interested in our college?</h3>
+        <input type="radio" id="friends" name="interest" value="friends" required>
+        <label for="friends">Friends</label><br>
+
+        <input type="radio" id="television" name="interest" value="television" required>
+        <label for="television">Television</label><br>
+
+        <input type="radio" id="internet" name="interest" value="internet" required>
+        <label for="internet">Internet</label><br>
+
+        <input type="radio" id="other" name="interest" value="other" required>
+        <label for="other">Other</label><br><br>
+
+        <!-- Text area for additional comments -->
+        <label for="comments">Additional Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+        <!-- Submit and Reset buttons -->
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
