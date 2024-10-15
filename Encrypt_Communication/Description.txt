@@ -1,0 +1,9 @@
+MUST HAVE 2 SHELL INSTANCES; ONE FOR SERVER (run first) AND ONE FOR CLIENT (run second). 
+
+The secure communication between the server and client is achieved using TLS/SSL, which encrypts all data transmitted between them.
+
+The server listens for incoming connections on a specific port, uses a certificate and private key to establish a secure connection, and ensures all data exchanged is encrypted.
+
+The client connects to the server, verifies the server's identity using the server's certificate, and then communicates securely by sending and receiving encrypted data.
+
+This ensures data confidentiality, integrity, and authentication, preventing eavesdropping and tampering during communication.
