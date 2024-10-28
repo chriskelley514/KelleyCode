@@ -1,8 +1,0 @@
-1. Password Protection (against brute-force and credential theft)
-Hashing and Salting Passwords: The program uses a secure password hashing mechanism (PBKDF2 with a salt). This makes it hard for attackers to crack passwords even if they gain access to the database. Plain-text passwords or weakly hashed passwords are easily compromised, so this is a crucial defense.
-2. SQL Injection Protection (against database attacks)
-Parameterized Queries: The program prevents SQL injection attacks by using parameterized queries instead of directly embedding user inputs into SQL statements. SQL injection is a common attack where attackers send malicious SQL commands via input fields to manipulate the database, but this method ensures those commands are not executed.
-3. Cross-Site Scripting (XSS) Protection (against client-side code injection)
-Input Sanitization: By escaping special HTML characters in user input (like converting < and > into &lt; and &gt;), the program protects against XSS attacks. XSS can allow attackers to inject malicious scripts into web pages viewed by other users.
-4. Error Handling (against information disclosure)
-Graceful Error Handling: Instead of exposing detailed stack traces or internal application information (which can help attackers), the program handles errors gracefully, reducing the risk of leaking sensitive information (e.g., in the case of dividing by zero).
